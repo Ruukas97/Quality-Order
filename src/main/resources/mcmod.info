@@ -1,0 +1,14 @@
+[
+{
+  "modid": "qualityorder",
+  "name": "Quality Order",
+  "description": "Revolutionizing Creative Minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://www.minecraftforum.net/forums/mapping-and-modding/2687920",
+  "authorList": ["Ruukas/Zjaelden"],
+  "credits": "Thanks to the people who provided me with feedback!",
+  "logoFile": "logo.jpg",
+  "dependencies": []
+}
+]

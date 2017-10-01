@@ -1,0 +1,11 @@
+itemGroup.unavailable=Unavailable
+itemGroup.skulls=Skulls
+itemGroup.thief=Thieving
+itemGroup.banner=Embroidery
+itemGroup.map=Cartography
+itemGroup.death=Death
+itemGroup.firework=Fireworks
+itemGroup.memory=Contained Memory
+itemGroup.armorstand=Armor Stands
+itemGroup.eggs=Eggs
+qualityorder.gui.bannermaker=Embroidery

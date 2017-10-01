@@ -1,0 +1,5 @@
+1.12
+Added changelog.txt file
+Added config option to disable the Spawnegg tab
+Fixed fireworks tab crash
+Fixed 

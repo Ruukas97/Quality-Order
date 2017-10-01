@@ -1,0 +1,11 @@
+itemGroup.unavailable=Utilgængelig
+itemGroup.skulls=Hoveder
+itemGroup.thief=Tyveri
+itemGroup.banner=Brodering
+itemGroup.map=Kartografi
+itemGroup.death=Død
+itemGroup.firework=Fyrværkeri
+itemGroup.memory=Rummet Minde
+itemGroup.armorstand=Rustningsstativer
+itemGroup.eggs=Æg
+qualityorder.gui.bannermaker=Brodering
