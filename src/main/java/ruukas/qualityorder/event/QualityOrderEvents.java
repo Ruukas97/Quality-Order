@@ -3,7 +3,6 @@ package ruukas.qualityorder.event;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainerCreative;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Slot;
@@ -41,28 +40,18 @@ public class QualityOrderEvents {
 	
 	@SubscribeEvent
 	public void onPostInitGui(GuiScreenEvent.InitGuiEvent.Post event) {
-		for(GuiButton but : event.getButtonList()){
-			if(but.id == 101 || but.id == 102){
-				but.y -= 20;
-			}
-		}
-				
-		
 		if (event.getGui() instanceof GuiContainerCreative) {
 			GuiContainerCreative creativeGui = (GuiContainerCreative) event.getGui();
 			
-			int tabPage = 0;
-
-			//	public ButtonQualityGui(int buttonId, int x, int y, int widthIn, int heightIn, int xTexStart, int yTexStart, int yDiffText, ResourceLocation resourceLocation) {
-			if(tabPage == Tabs.BANNER.getTabPage()){
+			/*for(GuiButton but : event.getButtonList()){
+				if(but.id == 101 || but.id == 102){
+					but.y -= 20;
+				}
+			}*/
+			
+			if(true){
 				Tab tab = (Tab) Tabs.BANNER;
-				event.getButtonList().add(new ButtonQualityGui(250, tab.getXForDrawing(creativeGui), tab.getYForDrawing(creativeGui), tab.getIconItemStack()) {
-					
-					@Override
-					public void mouseReleased(int mouseX, int mouseY) {
-						creativeGui.mc.displayGuiScreen(new GuiBannerMaker(creativeGui.mc.player));
-					}
-				});
+				event.getButtonList().add(new ButtonQualityGui(250, tab.getXForDrawing(creativeGui), tab.getYForDrawing(creativeGui), tab.getIconItemStack(), new GuiBannerMaker(creativeGui.mc.player), "Banner Gui"));
 			}
 			
 			if(QualityOrderConfig.shouldAddEggTab && creativeGui.getSelectedTabIndex() == Tabs.EGGS.getTabIndex()){
@@ -73,12 +62,11 @@ public class QualityOrderEvents {
 				event.getButtonList().add(new ButtonGuiOpener(new GuiGive(), 110, event.getGui().width/2-195/2-50-5, event.getGui().height/2-136/2, 50, 20, "Give Gui"));
 			}*/else if(QualityOrderConfig.shouldAddFireworkTab && creativeGui.getSelectedTabIndex() == Tabs.FIREWORK.getTabIndex()){
 				event.getButtonList().add(new ButtonGuiOpener(new GuiFireworksMaker(Minecraft.getMinecraft().player), 110, event.getGui().width/2-195/2-50-5, event.getGui().height/2-136/2, 50, 20, "Firework Gui"));
-				//event.getButtonList().add(new ButtonGuiOpener(new GuiQualityCrafting(), 110, event.getGui().width/2-195/2-50-5, 52 + event.getGui().height/2-136/2, 50, 20, "Crafting"));
-			}/*else if(creativeGui.getSelectedTabIndex() == QualityOrderTabs.ARMORSTAND.getTabIndex()){
-				event.getButtonList().add(new ButtonGuiOpener(new GuiCreativeChestOpener(), 110, event.getGui().width/2-195/2-50-5, event.getGui().height/2-136/2, 50, 20, "Banner Gui"));
-			}*/
+			}
 		}
 	}
+	
+	
 	
 	@SubscribeEvent
 	public void onButtonPressed(GuiScreenEvent.ActionPerformedEvent.Pre event) {

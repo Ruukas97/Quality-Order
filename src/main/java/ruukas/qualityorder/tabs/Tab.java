@@ -102,11 +102,13 @@ public abstract class Tab extends CreativeTabs{
 	
 	public int getXForDrawing(GuiContainerCreative gui){
 		int guiLeft = gui.getGuiLeft();
-		int xSize = gui.getXSize();
-		
+		//int xSize = gui.getXSize();
         int i = getTabColumn();
+
+		int x = guiLeft - 45 + ((i%2)*20);
+		
         
-        int x = guiLeft + 28 * i;
+        /*int x = guiLeft + 28 * i;
         
         if (isAlignedRight())
         {
@@ -115,7 +117,7 @@ public abstract class Tab extends CreativeTabs{
         else if (i > 0)
         {
             x += i;
-        }
+        }*/
         
         return x;
 	}
@@ -136,6 +138,6 @@ public abstract class Tab extends CreativeTabs{
             y = y + (ySize - 4);
         }
         
-        return y;
+        return y + 28;
 	}
 }
